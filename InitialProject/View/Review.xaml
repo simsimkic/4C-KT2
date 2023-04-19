@@ -1,0 +1,30 @@
+﻿<Window x:Class="InitialProject.View.Review"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="Review" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="ListOfTours" Margin="10,29,298,10" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Button></Button>
+                            <TextBlock Text="{Binding GuideKnowledge}" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding GuideLanguage}" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding TourAmusement}" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding Comment}" FontWeight="Bold" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding CheckpointName}" FontWeight="Bold" Margin="0,0,5,0"/>
+                        </StackPanel>
+                    </Button>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button
+            x:Name="ShowTours"
+            Click="ShowTour_Click" Content="Show Tours" Margin="531,29,169,355"/>
+    </Grid>
+</Window>

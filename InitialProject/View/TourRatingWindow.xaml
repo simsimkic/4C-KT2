@@ -1,0 +1,45 @@
+﻿<Window x:Class="InitialProject.View.TourRatingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="TourRatingWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.544,0.569" Focusable="True" Margin="0,-2,0,2">
+        <Label Content="Rate A Tour" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Guide's knowledge:" HorizontalAlignment="Left" Margin="87,140,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Guide's language:" HorizontalAlignment="Left" Margin="87,219,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Tour's amusement:" HorizontalAlignment="Left" Margin="87,288,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Comment:" HorizontalAlignment="Left" Margin="439,144,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Photos (URL):" HorizontalAlignment="Left" Margin="439,222,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Button Content="Rate" Command="{Binding RateTourCommand}" HorizontalAlignment="Center" Margin="0,366,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="122"/>
+        <ComboBox SelectedItem="{Binding GuideKnowledge, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="300,148,0,0" VerticalAlignment="Top" Width="50" IsDropDownOpen="False">
+            <ComboBoxItem Content="1" FontSize="16"/>
+            <ComboBoxItem Content="2" FontSize="16"/>
+            <ComboBoxItem Content="3" FontSize="16"/>
+            <ComboBoxItem Content="4" FontSize="16"/>
+            <ComboBoxItem Content="5" FontSize="16"/>
+        </ComboBox>
+        <TextBox Text="{Binding Comment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="584,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="68" Width="171" FontSize="14"/>
+        <ComboBox SelectedItem="{Binding GuideLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="300,228,0,0" VerticalAlignment="Top" Width="50" IsDropDownOpen="False">
+            <ComboBoxItem Content="1" FontSize="16"/>
+            <ComboBoxItem Content="2" FontSize="16"/>
+            <ComboBoxItem Content="3" FontSize="16"/>
+            <ComboBoxItem Content="4" FontSize="16"/>
+            <ComboBoxItem Content="5" FontSize="16"/>
+        </ComboBox>
+        <ComboBox x:Name="TourAmusementComboBox" SelectedItem="{Binding TourAmusement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="300,297,0,0" VerticalAlignment="Top" Width="50" IsDropDownOpen="False">
+            <ComboBoxItem Content="1" FontSize="16"/>
+            <ComboBoxItem Content="2" FontSize="16"/>
+            <ComboBoxItem Content="3" FontSize="16"/>
+            <ComboBoxItem Content="4" FontSize="16"/>
+            <ComboBoxItem Content="5" FontSize="16"/>
+        </ComboBox>
+        <TextBox Text="{Binding PhotoURL, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="584,229,0,0" VerticalAlignment="Top" Height="68" Width="171" FontSize="16"/>
+        <TextBox Text="{Binding TourName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="374,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button Content="Add Photo" Command="{Binding AddPhotoCommand}" HorizontalAlignment="Left" Margin="695,308,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tour Name:" HorizontalAlignment="Left" Margin="259,88,0,0" VerticalAlignment="Top" FontSize="16"/>
+
+    </Grid>
+</Window>

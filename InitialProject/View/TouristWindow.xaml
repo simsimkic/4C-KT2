@@ -1,0 +1,18 @@
+﻿<Window x:Class="InitialProject.View.TouristWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="TouristWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Tourist" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" Margin="0,39,0,0"/>
+        <Button Content="Show Coupons" Command="{Binding ShowCouponsCommand}" HorizontalAlignment="Left" Margin="152,161,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Book A Tour" Command="{Binding BookCommand}" HorizontalAlignment="Left" Margin="163,245,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Rate A Tour" Command="{Binding RateTourCommand}" HorizontalAlignment="Left" Margin="400,161,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Track A Tour" Command="{Binding TrackTourCommand}" HorizontalAlignment="Left" Margin="397,245,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Show Notifications" Command="{Binding ShowNotificationsCommand}" HorizontalAlignment="Left" Margin="134,330,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

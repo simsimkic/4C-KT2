@@ -1,0 +1,20 @@
+﻿<Window x:Class="InitialProject.View.TouristCouponsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="TouristCouponsWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="My Coupons:" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <DataGrid ItemsSource="{Binding Coupons}" AutoGenerateColumns="False" Margin="70,137,70,85">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="IsUsed" Binding="{Binding IsUsed}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Refresh" Command="{Binding RefreshCommand}" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</Window>

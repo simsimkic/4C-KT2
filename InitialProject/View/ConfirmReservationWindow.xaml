@@ -1,0 +1,30 @@
+﻿<Window x:Class="InitialProject.View.ConfirmReservationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.View"
+        mc:Ignorable="d"
+        Title="ConfirmReservationWindow" Height="450" Width="800">
+    
+    <Grid>
+        <Button Content="Cancel reservation" Command="{Binding CancelReservationCommand}" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Button Content="Confirm Reservation" Command="{Binding ConfirmReservationCommand}" HorizontalAlignment="Center" Margin="0,313,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <DataGrid ItemsSource="{Binding Coupons, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding IsCouponEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" Margin="200,128,200,156" Height="150" Width="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="IsUsed" Binding="{Binding IsUsed}" />
+                <DataGridTemplateColumn Header="Use Coupon">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Use Coupon" Command="{Binding DataContext.UseCouponCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="My Coupons:" HorizontalAlignment="Center" Margin="0,54,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+    </Grid>
+</Window>
+
